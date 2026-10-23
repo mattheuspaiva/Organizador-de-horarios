@@ -4,47 +4,53 @@ Nosso projeto utiliza a técnica de Backtracking, que consiste em testar diferen
 
 O algoritmo tenta distribuir as aulas nos horários e nas salas disponíveis. Quando percebe que não pode continuar com uma determinada combinação, volta atrás e tenta outra. Esse processo se repete até encontrar uma grade válida ou concluir que não existe solução.
 
-Restrições implementadas:
+Restrições implementadas, programa verifica as seguintes restrições:
 
-O programa verifica as seguintes restrições:
-
-Cada disciplina deve ter exatamente duas aulas em horários diferentes.
-Um professor não pode ministrar duas aulas no mesmo horário.
-Uma sala não pode receber duas aulas no mesmo horário.
-Redes e Programação Web devem ser alocadas exclusivamente em laboratórios.
-Os horários disponíveis de cada professor devem ser respeitados.
-Os bloqueios de disponibilidade das salas devem ser respeitados.
+-Cada disciplina deve ter exatamente duas aulas em horários diferentes.
+-Um professor não pode ministrar duas aulas no mesmo horário.
+-Uma sala não pode receber duas aulas no mesmo horário.
+-Redes e Programação Web devem ser alocadas exclusivamente em laboratórios.
+-Os horários disponíveis de cada professor devem ser respeitados.
+-Os bloqueios de disponibilidade das salas devem ser respeitados.
 
 Quando encontra uma solução válida, o programa apresenta a grade de horários. Caso contrário, informa que não foi possível distribuir as aulas respeitando todas as regras.
 
 Pseudocódigo:
 
+<pre>
 Início
+    Criar as listas de disciplinas, professores, salas e horários.
 
-Criar as listas de disciplinas, professores, salas e horários.
+    Iniciar a busca por uma grade válida.
 
-Iniciar a busca por uma grade válida.
+    Função buscar(índice):
+        Se todas as aulas foram alocadas:
+            Retornar verdadeiro.
 
-Função buscar(índice):
+        Selecionar a próxima aula.
 
-Se todas as aulas foram alocadas, retornar verdadeiro.
+        Para cada horário:
+            Para cada sala:
+                Se a alocação respeitar todas as restrições:
+                    Alocar a aula.
 
-Selecionar a próxima aula.
+                    Se a busca pela próxima aula encontrar uma solução:
+                        Retornar verdadeiro.
 
-Para cada horário:
-    Para cada sala:
-        Se a alocação respeitar todas as restrições:
-            Alocar a aula.
-            Se a busca pela próxima aula encontrar uma solução, retornar verdadeiro.
-            Caso contrário, desfazer a alocação e registrar um retrocesso.
+                    Caso contrário:
+                        Desfazer a alocação.
+                        Registrar um retrocesso.
 
-Retornar falso.
+        Retornar falso.
 
-Se a busca retornar verdadeiro, exibir a grade de horários. Caso contrário, exibir uma mensagem informando que não existe solução.
+    Se a busca retornar verdadeiro:
+        Exibir a grade de horários.
+    Caso contrário:
+        Exibir uma mensagem informando que não existe solução.
 
-Exibir os indicadores de busca e retrocesso.
-
-Fim.
+    Exibir os indicadores de busca e retrocesso.
+Fim
+</pre>
 
 <table>
   <tr>
