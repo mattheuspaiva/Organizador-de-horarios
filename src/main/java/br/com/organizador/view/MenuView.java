@@ -18,7 +18,7 @@ public class MenuView {
 
         while (opcao != 0) {
 
-            System.out.println("\n===== MENU PRINCIPAL =====");
+            System.out.println("\n======= MENU PRINCIPAL ========");
             System.out.println("1 - Cenario A");
             System.out.println("2 - Cenario B");
             System.out.println("3 - Alterar disponibilidades");
