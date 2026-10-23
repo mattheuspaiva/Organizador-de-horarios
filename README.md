@@ -1,53 +1,50 @@
 Técnica utilizada:
 
-Nosso projeto utiliza a técnica de Backtracking, que basicamente consiste em testar possibilidades e volta atrás em escolhas que impedem encontrar uma solução válida.
-O algoritmo tenta distribuir as aulas nos horários e nas salas disponíveis. Quando percebe que não consegue continuar, volta atrás e tenta outra combinação. Esse processo se repete até encontrar uma grade válida ou concluir que não há solução.
+Nosso projeto utiliza a técnica de Backtracking, que consiste em testar diferentes possibilidades e voltar atrás nas escolhas que impedem encontrar uma solução válida.
+
+O algoritmo tenta distribuir as aulas nos horários e nas salas disponíveis. Quando percebe que não pode continuar com uma determinada combinação, volta atrás e tenta outra. Esse processo se repete até encontrar uma grade válida ou concluir que não existe solução.
 
 Restrições implementadas:
-O programa vai verificar as seguintes restrições:
 
-- Cada disciplina deve ter exatamente duas aulas em horários diferentes.
-- Um professor não pode ministrar duas aulas no mesmo horário.
-- Uma sala não pode receber duas aulas no mesmo horário.
-- Redes e Programação Web devem ser alocadas exclusivamente em laboratórios.
-- Os horários disponíveis de cada professor devem ser respeitados.
-- Os bloqueios de disponibilidade das salas devem ser respeitados.
+O programa verifica as seguintes restrições:
+
+Cada disciplina deve ter exatamente duas aulas em horários diferentes.
+Um professor não pode ministrar duas aulas no mesmo horário.
+Uma sala não pode receber duas aulas no mesmo horário.
+Redes e Programação Web devem ser alocadas exclusivamente em laboratórios.
+Os horários disponíveis de cada professor devem ser respeitados.
+Os bloqueios de disponibilidade das salas devem ser respeitados.
 
 Quando encontra uma solução válida, o programa apresenta a grade de horários. Caso contrário, informa que não foi possível distribuir as aulas respeitando todas as regras.
 
 Pseudocódigo:
 
 Início
-    Criar as listas de disciplinas, professores, salas e horários
 
-    Iniciar a busca por uma grade válida
+Criar as listas de disciplinas, professores, salas e horários.
 
-    Função buscar(índice):
-        Se todas as aulas foram alocadas:
-            Retornar verdadeiro
+Iniciar a busca por uma grade válida.
 
-        Selecionar a próxima aula
+Função buscar(índice):
 
-        Para cada horário:
-            Para cada sala:
-                Se a alocação respeitar todas as restrições:
-                    Alocar a aula
+Se todas as aulas foram alocadas, retornar verdadeiro.
 
-                    Se buscar(próxima aula) retornar verdadeiro:
-                        Retornar verdadeiro
+Selecionar a próxima aula.
 
-                    Desfazer a alocação
-                    Registrar um retrocesso
+Para cada horário:
+    Para cada sala:
+        Se a alocação respeitar todas as restrições:
+            Alocar a aula.
+            Se a busca pela próxima aula encontrar uma solução, retornar verdadeiro.
+            Caso contrário, desfazer a alocação e registrar um retrocesso.
 
-        Retornar falso
+Retornar falso.
 
-    Se buscar(índice inicial) retornar verdadeiro:
-        Exibir a grade de horários
-    Senão:
-        Exibir mensagem informando que não existe solução
+Se a busca retornar verdadeiro, exibir a grade de horários. Caso contrário, exibir uma mensagem informando que não existe solução.
 
-    Exibir indicadores de busca e retrocesso
-Fim
+Exibir os indicadores de busca e retrocesso.
+
+Fim.
 
 <table>
   <tr>
