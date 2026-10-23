@@ -14,3 +14,32 @@ O programa vai verificar as seguintes restrições:
 - Os bloqueios de disponibilidade das salas devem ser respeitados.
 
 Quando encontra uma solução válida, o programa apresenta a grade de horários. Caso contrário, informa que não foi possível distribuir as aulas respeitando todas as regras.
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/Inocencio-Ferraz">
+        <img src="https://github.com/Inocencio-Ferraz.png" width="100px;" alt="Inocencio-Ferraz"/><br />
+        <b>Inocencio-Ferraz</b>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/clebio0901">
+        <img src="https://github.com/clebio0901.png" width="100px;" alt="Clebio-Luis"/><br />
+        <b>Clebio-Luis</b>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/RaineCarla">
+        <img src="https://github.com/RaineCarla.png" width="100px;" alt="RaineCarla"/><br />
+        <b>RaineCarla</b>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/mattheuspaiva">
+        <img src="https://github.com/mattheuspaiva.png" width="100px;" alt="mattheuspaiva"/><br />
+        <b>mattheuspaiva</b>
+      </a>
+    </td>
+  </tr>
+</table>
