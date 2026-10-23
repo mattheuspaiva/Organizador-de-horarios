@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class GradeHorariosView {
+
     public void executar(int opcao, Scanner leitor) {
 
         List<String> horarios = new ArrayList<>(Arrays.asList("H1", "H2", "H3", "H4", "H5"));
@@ -27,7 +28,6 @@ public class GradeHorariosView {
         }
 
         if (opcao == 3) {
-            MenuView menu = new MenuView();
 
             ana.setHorariosDisponiveis(lerHorarios(leitor, "Ana", horarios));
 
@@ -104,11 +104,13 @@ public class GradeHorariosView {
         if (encontrou) {
             System.out.println("Grade encontrada!");
             System.out.println();
+
             for (int i = 0; i < grade.size(); i++) {
+
                 Alocacao aula = grade.get(i);
 
                 System.out.println(
-                                aula.getDisciplina().getNome()
+                        aula.getDisciplina().getNome()
                                 + " | Professor: "
                                 + aula.getDisciplina().getProfessor().getNome()
                                 + " | Horario: "
@@ -116,8 +118,10 @@ public class GradeHorariosView {
                                 + " | Sala: "
                                 + aula.getSala().getNome()
                 );
+
                 System.out.println("--------------------------------------------------------------------------");
             }
+
         } else {
             System.out.println("Nao existe uma grade valida.");
         }
@@ -127,4 +131,3 @@ public class GradeHorariosView {
         System.out.println("Retrocessos: " + retrocessos);
     }
 }
-
