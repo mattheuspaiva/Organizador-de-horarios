@@ -15,6 +15,40 @@ O programa vai verificar as seguintes restrições:
 
 Quando encontra uma solução válida, o programa apresenta a grade de horários. Caso contrário, informa que não foi possível distribuir as aulas respeitando todas as regras.
 
+Pseudocódigo:
+
+Início
+    Criar as listas de disciplinas, professores, salas e horários
+
+    Iniciar a busca por uma grade válida
+
+    Função buscar(índice):
+        Se todas as aulas foram alocadas:
+            Retornar verdadeiro
+
+        Selecionar a próxima aula
+
+        Para cada horário:
+            Para cada sala:
+                Se a alocação respeitar todas as restrições:
+                    Alocar a aula
+
+                    Se buscar(próxima aula) retornar verdadeiro:
+                        Retornar verdadeiro
+
+                    Desfazer a alocação
+                    Registrar um retrocesso
+
+        Retornar falso
+
+    Se buscar(índice inicial) retornar verdadeiro:
+        Exibir a grade de horários
+    Senão:
+        Exibir mensagem informando que não existe solução
+
+    Exibir indicadores de busca e retrocesso
+Fim
+
 <table>
   <tr>
     <td align="center">
